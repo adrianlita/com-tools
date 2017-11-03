@@ -7,6 +7,7 @@ Useful for people working with (more than one) COM port, especially USB-based se
 Simple tool that lists all COM ports on the PC. Useful especially when building applications that require plugging and unplugging USB-Serial devices. Usually on Windows you would just go to Device Manager and check the COM ports. Using this small tool, you don't have to spend time on that any more.
 
 When running, press **Ctrl+Alt+C** to show. The window will stay for a couple of seconds, and will hide itself. If you wish to hide it faster than that, press Ctrl+Alt+C again. May require permissions.
+To quit, hit Alt+F4 while the window is on.
 
 ## COM2Sniffer
 
