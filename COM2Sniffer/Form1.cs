@@ -44,20 +44,11 @@ namespace COM2Sniffer
         {
             //COM ports listing
             var ports = System.IO.Ports.SerialPort.GetPortNames();
-            for(int i = 0; i < ports.Count() - 1; i++)
+            for(int i = 0; i < ports.Count(); i++)
             {
                 Port1COM.Items.Add(ports[i]);
                 Port2COM.Items.Add(ports[i]);
             }
-            
-
-            for(int i = 0; i < Port1COM.Items.Count - 1; i++)
-                if(Port1COM.Items[i].ToString() == "COM33")
-                    Port1COM.Text = "COM33";
-
-            for (int i = 0; i < Port2COM.Items.Count - 1; i++)
-                if (Port2COM.Items[i].ToString() == "COM32")
-                    Port2COM.Text = "COM32";
 
             ClearAllButton_Click(sender, e);
         }
@@ -148,6 +139,15 @@ namespace COM2Sniffer
             byte[] buf = new byte[spL.BytesToRead];
             spL.Read(buf, 0, buf.Length);
             AddData(LogBox, System.Text.Encoding.ASCII.GetString(buf), 2);     
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.COM1Port = Port1COM.Text;
+            Properties.Settings.Default.COM1Baud = Port1Baud.Text;
+            Properties.Settings.Default.COM2Port = Port2COM.Text;
+            Properties.Settings.Default.COM2Baud = Port2Baud.Text;
+            Properties.Settings.Default.Save();
         }
     }
 }

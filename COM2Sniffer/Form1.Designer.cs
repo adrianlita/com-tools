@@ -56,18 +56,20 @@
             // 
             this.Port1COM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Port1COM.BackColor = System.Drawing.Color.Black;
+            this.Port1COM.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::COM2Sniffer.Properties.Settings.Default, "COM1Port", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.Port1COM.ForeColor = System.Drawing.Color.Green;
             this.Port1COM.FormattingEnabled = true;
             this.Port1COM.Location = new System.Drawing.Point(12, 351);
             this.Port1COM.Name = "Port1COM";
             this.Port1COM.Size = new System.Drawing.Size(71, 21);
             this.Port1COM.TabIndex = 2;
-            this.Port1COM.Text = "COM6";
+            this.Port1COM.Text = global::COM2Sniffer.Properties.Settings.Default.COM1Port;
             // 
             // Port1Baud
             // 
             this.Port1Baud.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Port1Baud.BackColor = System.Drawing.Color.Black;
+            this.Port1Baud.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::COM2Sniffer.Properties.Settings.Default, "COM1Baud", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.Port1Baud.ForeColor = System.Drawing.Color.Green;
             this.Port1Baud.FormattingEnabled = true;
             this.Port1Baud.Items.AddRange(new object[] {
@@ -82,7 +84,7 @@
             this.Port1Baud.Name = "Port1Baud";
             this.Port1Baud.Size = new System.Drawing.Size(89, 21);
             this.Port1Baud.TabIndex = 3;
-            this.Port1Baud.Text = "9600";
+            this.Port1Baud.Text = global::COM2Sniffer.Properties.Settings.Default.COM1Baud;
             // 
             // Port1Button
             // 
@@ -114,6 +116,7 @@
             // 
             this.Port2Baud.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Port2Baud.BackColor = System.Drawing.Color.Black;
+            this.Port2Baud.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::COM2Sniffer.Properties.Settings.Default, "COM2Baud", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.Port2Baud.ForeColor = System.Drawing.Color.Red;
             this.Port2Baud.FormattingEnabled = true;
             this.Port2Baud.Items.AddRange(new object[] {
@@ -128,19 +131,20 @@
             this.Port2Baud.Name = "Port2Baud";
             this.Port2Baud.Size = new System.Drawing.Size(89, 21);
             this.Port2Baud.TabIndex = 6;
-            this.Port2Baud.Text = "9600";
+            this.Port2Baud.Text = global::COM2Sniffer.Properties.Settings.Default.COM2Baud;
             // 
             // Port2COM
             // 
             this.Port2COM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Port2COM.BackColor = System.Drawing.Color.Black;
+            this.Port2COM.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::COM2Sniffer.Properties.Settings.Default, "COM2Port", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.Port2COM.ForeColor = System.Drawing.Color.Red;
             this.Port2COM.FormattingEnabled = true;
             this.Port2COM.Location = new System.Drawing.Point(527, 351);
             this.Port2COM.Name = "Port2COM";
             this.Port2COM.Size = new System.Drawing.Size(71, 21);
             this.Port2COM.TabIndex = 5;
-            this.Port2COM.Text = "COM32";
+            this.Port2COM.Text = global::COM2Sniffer.Properties.Settings.Default.COM2Port;
             // 
             // ClearAllButton
             // 
@@ -186,6 +190,7 @@
             this.Controls.Add(this.Port1COM);
             this.Name = "Form1";
             this.Text = "COM Sniffer";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
